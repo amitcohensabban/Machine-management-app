@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@progress/kendo-theme-default/dist/all.css';
+body{
+  margin: 0;
+  width: 100%;
+	height: 100vh;
+  box-sizing: border-box;
+  background: rgb(233 233 247);
+  color: #333;
+}

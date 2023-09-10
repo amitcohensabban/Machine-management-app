@@ -17,14 +17,13 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.popUpService.isOpen.subscribe((isOpen: boolean) => {
       this.isOpen = isOpen;
-      console.log(this.isOpen);
     });
     this.authService.userEmailSubject.subscribe((userEmail: string) => {
       this.userEmail = userEmail;
     });
     this.authService.isUserLoggedIn.subscribe((isUserLoggedIn: boolean) => {
       this.isUserLoggedIn = isUserLoggedIn;
-    })
+    });
   }
   handle() {
     this.popUpService.openDialog();

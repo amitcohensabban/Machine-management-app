@@ -1,1 +1,25 @@
-<p>machine-management works!</p>
+<kendo-grid class="container" [kendoGridBinding]="dataToDisplay"  [pageable]="true"[pageSize]="7" >
+  <kendo-grid-column title="Edit">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <button (click)="editMachine(dataItem)" class="edit-button">Edit</button>
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="machineId" title="Machine ID"> </kendo-grid-column>
+  <kendo-grid-column field="machineName" title="Machine Name"> </kendo-grid-column>
+  <kendo-grid-column field="manufacturerId" title="Manufacturer ID"> </kendo-grid-column>
+  <kendo-grid-column field="dateTimeOfPurchase" title="Date and Time of Purchase"> </kendo-grid-column>
+  <kendo-grid-column field="yearOfManufacture" title="Year of Manufacture"> </kendo-grid-column>
+  <kendo-grid-column field="machineStatus" title="Machine Status">
+      <ng-template kendoGridCellTemplate let-dataItem>
+          <ng-container *ngIf="dataItem.machineStatus === '1'">
+              <span class="active-icon">Active</span>
+          </ng-container>
+          <ng-container *ngIf="dataItem.machineStatus === '0'">
+              <span class="inactive-icon">Inactive</span>
+          </ng-container>
+      </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="capacityInPercentage" title="Capacity (%)"> </kendo-grid-column>
+</kendo-grid>
+<app-edit-machine></app-edit-machine>
+

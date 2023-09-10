@@ -23,12 +23,7 @@ export class LoginComponent {
     const email: string = this.loginForm.get('email')?.value;
     const password: string = this.loginForm.get('password')?.value;
 
-    const isAuthenticated = this.authService.login(email, password);
+     this.authService.login(email, password);
 
-    if (isAuthenticated) {
-      console.log('Login successful');
-    } else {
-      console.log('Login failed. Please check your credentials.');
-    }
   }
 }

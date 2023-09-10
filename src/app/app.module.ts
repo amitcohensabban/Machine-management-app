@@ -12,6 +12,9 @@ import { LoginComponent } from './components/login/login.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { MachineManagementComponent } from './components/machine-management/machine-management.component';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { EditMachineComponent } from './components/edit-machine/edit-machine.component';
+
 
 
 
@@ -23,13 +26,14 @@ import { MachineManagementComponent } from './components/machine-management/mach
     PopUpComponent,
     LoginComponent,
     HomePageComponent,
-    MachineManagementComponent
+    MachineManagementComponent,
+    EditMachineComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DialogsModule,
-    BrowserAnimationsModule,FormsModule, ReactiveFormsModule, ButtonsModule
+    BrowserAnimationsModule,FormsModule, ReactiveFormsModule, ButtonsModule, GridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,40 @@
+<kendo-dialog [width]="'400px'" [title]="'Edit Machine'" *ngIf="isModalOpen">
+  <ng-template kendoDialogTitleBar>
+    <span>Edit Machine</span>
+    <button kendoDialogTitleBarClose  (click)="closeDialog()"></button>
+  </ng-template>
+
+  <form #editForm="ngForm" (ngSubmit)="saveMachine()">
+    <div class="k-form-field">
+      <label for="machineName">Machine Name</label>
+      <input type="text" id="machineName" name="machineName" [(ngModel)]="editedMachine.machineName" required>
+    </div>
+
+    <div class="k-form-field">
+      <label for="manufacturerId">Manufacturer ID</label>
+      <input type="text" id="manufacturerId" name="manufacturerId" [(ngModel)]="editedMachine.manufacturerId" required>
+    </div>
+
+    <div class="k-form-field">
+      <label for="yearOfManufacture">Year of Manufacture</label>
+      <input type="text" id="yearOfManufacture" name="yearOfManufacture" [(ngModel)]="editedMachine.yearOfManufacture" required>
+    </div>
+
+    <div class="k-form-field">
+      <label for="machineStatus">Machine Status</label>
+      <select id="machineStatus" name="machineStatus" [(ngModel)]="editedMachine.machineStatus" required>
+        <option value="0">Inactive</option>
+        <option value="1">Active</option>
+      </select>
+    </div>
+
+    <div class="k-form-field">
+      <label for="capacityInPercentage">Capacity (%)</label>
+      <input type="text" id="capacityInPercentage" name="capacityInPercentage" [(ngModel)]="editedMachine.capacityInPercentage" required>
+    </div>
+    <div class="k-dialog-actions">
+      <button class="k-button k-primary" (submit)="saveMachine()" type="submit">Save</button>
+      <button class="k-button" (click)="closeDialog()">Cancel</button>
+    </div>
+  </form>
+</kendo-dialog>

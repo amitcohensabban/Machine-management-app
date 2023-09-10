@@ -1,10 +1,10 @@
 <div class="header-container">
   <div class="left-side">
     <div class="logo"></div>
-    <button (click)="handle()">button</button>
+    <button *ngIf="isUserLoggedIn" class="custom-button" (click)="handle()">ACTIONS</button>
   </div>
 
-  <div class="user"> <h2>HELLO USER</h2></div>
+  <div class="user"> <h2>HELLO {{userEmail}}</h2></div>
 </div>
 <app-pop-up></app-pop-up>
 

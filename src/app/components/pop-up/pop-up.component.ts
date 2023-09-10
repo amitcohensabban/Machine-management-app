@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { PopUpService } from 'src/app/services/pop-up.service';
 @Component({
   selector: 'app-pop-up',
@@ -9,7 +10,7 @@ import { PopUpService } from 'src/app/services/pop-up.service';
 export class PopUpComponent implements OnInit {
   isOpen: boolean = false;
 
-  constructor(private popUpService: PopUpService, private router: Router) {}
+  constructor(private popUpService: PopUpService, private router: Router,private authService:AuthService) {}
   ngOnInit(): void {
     this.popUpService.isOpen.subscribe((isOpen: boolean) => {
       this.isOpen = isOpen;
@@ -25,6 +26,7 @@ export class PopUpComponent implements OnInit {
   }
 
   onLogoutClick() {
+    this.authService.logout();
     this.router.navigate(['/login']);
     this.popUpService.closeDialog();
   }

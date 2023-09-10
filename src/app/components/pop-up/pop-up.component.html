@@ -1,7 +1,7 @@
 <kendo-dialog (click)="handle()"*ngIf="isOpen" title="Please confirm" >
-  <p>Are you sure  want to logout or home page?</p>
+  <p>Are you want to logout or home page?</p>
   <kendo-dialog-actions>
-      <button kendoButton (click)="onLogoutClick()" >logout</button>
-      <button kendoButton (click)="onHomeClick()" themeColor="primary">homepage</button>
+      <button kendoButton (click)="onLogoutClick()" themeColor="primary">logout</button>
+      <button kendoButton (click)="onHomeClick()" >homepage</button>
   </kendo-dialog-actions>
 </kendo-dialog>

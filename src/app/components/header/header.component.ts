@@ -8,7 +8,7 @@ import { PopUpService } from 'src/app/services/pop-up.service';
 })
 export class HeaderComponent {
   isOpen: boolean = false;
-  userEmail: string = 'Guest';
+  userEmail: string|null = 'Guest';
   isUserLoggedIn: boolean = false;
   constructor(
     private popUpService: PopUpService,
@@ -24,6 +24,16 @@ export class HeaderComponent {
     this.authService.isUserLoggedIn.subscribe((isUserLoggedIn: boolean) => {
       this.isUserLoggedIn = isUserLoggedIn;
     });
+    if (localStorage.getItem('isUserLoggedIn')==='true') {
+      this.authService.setIsUserLoggedIn(true);
+    }
+    if (localStorage.getItem('userEmail')) {
+       this.userEmail = localStorage.getItem('userEmail');
+       if (this.userEmail !== null) {
+        this.authService.userEmailSubject.next(this.userEmail);
+      }
+    }
+
   }
   handle() {
     this.popUpService.openDialog();

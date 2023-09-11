@@ -36,4 +36,7 @@ export class AuthService {
   getUserEmail(): string {
     return localStorage.getItem('userEmail') || '';
   }
+  setIsUserLoggedIn(isUserLoggedIn: boolean){
+    this.isUserLoggedInSubject.next(isUserLoggedIn);
+  }
 }

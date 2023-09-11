@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UploadModule } from '@progress/kendo-angular-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { MachineManagementComponent } from './components/machine-management/machine-management.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { EditMachineComponent } from './components/edit-machine/edit-machine.component';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 
 
 
@@ -27,13 +29,15 @@ import { EditMachineComponent } from './components/edit-machine/edit-machine.com
     LoginComponent,
     HomePageComponent,
     MachineManagementComponent,
-    EditMachineComponent
+    EditMachineComponent,
+    ImageUploadComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DialogsModule,
-    BrowserAnimationsModule,FormsModule, ReactiveFormsModule, ButtonsModule, GridModule
+    BrowserAnimationsModule,FormsModule, ReactiveFormsModule, ButtonsModule, GridModule,UploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

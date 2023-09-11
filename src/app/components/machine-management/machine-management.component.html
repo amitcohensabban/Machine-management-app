@@ -26,14 +26,22 @@
     <ng-template kendoGridCellTemplate let-dataItem>
       <ng-container *ngIf="dataItem.machineStatus === '1'">
         <span class="active-icon">Active</span>
+        <span class="k-icon k-i-check active-icon green-icon"></span>
       </ng-container>
       <ng-container *ngIf="dataItem.machineStatus === '0'">
         <span class="inactive-icon">Inactive</span>
+        <span class="k-icon k-i-close inactive-icon red-icon"></span>
       </ng-container>
     </ng-template>
   </kendo-grid-column>
   <kendo-grid-column field="capacityInPercentage" title="Capacity (%)">
   </kendo-grid-column>
+  <kendo-grid-column field="photo" title="photo">
+    <ng-template kendoGridCellTemplate >
+      <app-image-upload></app-image-upload>
+    </ng-template>
+  </kendo-grid-column>
+
   <kendo-grid-column title="delete">
     <ng-template kendoGridCellTemplate let-dataItem>
       <button (click)="deleteMachine(dataItem)" class="delete-button">

@@ -1,0 +1,5 @@
+<label *ngIf="!isImg" class="custom-file-upload">
+  <input type="file" (change)="onFileSelected($event)" accept="image/*">
+  Browse for image
+</label>
+<img [src]="imageUrl" *ngIf="imageUrl">

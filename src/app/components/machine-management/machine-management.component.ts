@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { MachinesData } from 'src/app/data/array';
 import { MachineDataService } from 'src/app/services/machine-data.service';
 @Component({
   selector: 'app-machine-management',

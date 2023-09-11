@@ -34,5 +34,13 @@ export class MachineDataService {
   setSelectedMachineId(machineId: number | null) {
     this.selectedMachineId.next(machineId);
   }
+
+  deleteMachine(machineId: number) {
+    const currentData = this.machinesData.getValue();
+    const updatedData = currentData.filter((machine: any) => {
+      return machine.machineId !== machineId;
+    });
+    this.machinesData.next(updatedData);
+  }
   constructor() {}
 }

@@ -25,4 +25,12 @@ export class MachineManagementComponent implements OnInit {
     this.machineDataService.setSelectedMachineId(dataItem.machineId);
     this.machineDataService.handleOpen(true);
   }
+  deleteMachine(dataItem: any) {
+    const machineIdToDelete = dataItem.machineId;
+    const currentData = this.dataToDisplay;
+    const updatedData = currentData.filter((machine: any) => {
+      return machine.machineId !== machineIdToDelete;
+    });
+    this.machineDataService.updateData(updatedData);
+  }
 }

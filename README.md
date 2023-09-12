@@ -1,4 +1,9 @@
 # MachineManagement
+This Git repository houses an Angular-based client-side web application built using Kendo UI, facilitating machine management, including image uploads. The application comprises three primary views: a login page for authentication, a home page with user-specific greetings, and a machine management page that features Kendo UI controls like Grid, Button, and Dropdown List for viewing, editing, and deleting machine records, along with the ability to upload images for each machine record.
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
